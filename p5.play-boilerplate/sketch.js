@@ -28,7 +28,7 @@ blast_img6 = loadImage("blast6.png");
 blast_img7 = loadImage("blast7.png");
 
 collided = loadAnimation("blast1.png","blast2.png","blast3.png","blast4.png","blast5.png","blast6.png","blast7.png" );
-laser_img = loadImage("lazer_attack.jpg");
+laser_img = loadImage("laser_attack.jpg");
 
 life_img = loadImage("pixel_heart.png");
 coin_img = loadImage("coin.png");
@@ -42,7 +42,7 @@ asteroid_img3 = loadImage("astroid3.png");
 redball_img = loadImage("enemy_spaceship_attack.png");
 blueball_img = loadImage("enemy_spaceship_attack1.png");
 win_img = loadImage("win.png");
-lose_img = loadImage("game_over.img");
+lose_img = loadImage("game_over.png");
 
 }
 
@@ -55,7 +55,7 @@ space.addImage(back_img);
 space.velocityY = 2
 
 spaceship = createSprite(width/2,height-100);
-spaceship = addImage(player_img);
+spaceship.addImage(player_img);
 spaceship.scale= 0.5;
 
 
