@@ -28,31 +28,31 @@ blast_img6 = loadImage("blast6.png");
 blast_img7 = loadImage("blast7.png");
 
 collided = loadAnimation("blast1.png","blast2.png","blast3.png","blast4.png","blast5.png","blast6.png","blast7.png" );
-laser_img = loadImage("lazer attack.jpg");
+laser_img = loadImage("lazer_attack.jpg");
 
-life_img = loadImgae("pixel-heart-.png");
-coin_img = loadImage("coin-.png");
-fule_img = loadImage("fule.png");
+life_img = loadImage("pixel_heart.png");
+coin_img = loadImage("coin.png");
+fule_img = loadImage("fuel.png");
 
 back_img = loadImage("bgtrack.jpg");
 back2_img = loadImage("bg2.jpg");
-asteroid_img1 = laodImage("astroid1.png");
+asteroid_img1 = loadImage("astroid1.png");
 asteroid_img2 = loadImage("astroid2.png");
 asteroid_img3 = loadImage("astroid3.png");
 redball_img = loadImage("enemy_spaceship_attack.png");
 blueball_img = loadImage("enemy_spaceship_attack1.png");
 win_img = loadImage("win.png");
-lose_img = loadImgae("game_over-.img");
+lose_img = loadImage("game_over.img");
 
 }
 
 function setup() {
 
-createCanvas(800,600);
 canvas = createCanvas(displayWidth, displayHeight);
+
 space = createSprite(width/2,height/2,width,height);
 space.addImage(back_img);
-space.velocityY = (5 + score/10);
+space.velocityY = 2
 
 spaceship = createSprite(width/2,height-100);
 spaceship = addImage(player_img);
