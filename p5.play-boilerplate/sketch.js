@@ -10,7 +10,7 @@ var asteroidGroup, coinGroup, fuelGroup, laserGroup;
  var blast_img1, blast_img2, blast_img3, blast_img4, blast_img5, blast_img6, blast_img7;
  var coin_img, back_img,back2_img,  laser_img, fule_img , asteroid_img1, collided,asteroid_img2, asteroid_img3, player_img;
  var enemy1_img, enemy2_img, life_img, win_img, lose_img, restartball_img, blueball_img;
-
+var laser, laserGroup;
  
 function preload(){
 
@@ -28,7 +28,7 @@ blast_img6 = loadImage("blast6.png");
 blast_img7 = loadImage("blast7.png");
 
 collided = loadAnimation("blast1.png","blast2.png","blast3.png","blast4.png","blast5.png","blast6.png","blast7.png" );
-laser_img = loadImage("laser_attack.jpg");
+laser_img = loadImage("laser_attack.png");
 
 life_img = loadImage("pixel_heart.png");
 coin_img = loadImage("coin.png");
@@ -59,6 +59,7 @@ spaceship.addImage(player_img);
 spaceship.scale= 0.5;
 
 
+laserGroup= new Group();
 
 
 
@@ -71,12 +72,40 @@ function draw(){
 background(back_img);
 drawSprites();
 
+//reset the background
+
+if(space.y > height/3){
+    space.y = height/2;
+}
+
+if(keyDown("left")){
+    spaceship.x -=3;
 
 
+}
+if(keyDown("right")){
+    spaceship.x +=3;
 
+    
+}
+if(keyDown("space")){
+    shoot();
 
 
     
+}
+
+    
+}
+
+
+function shoot(){
+    laser= createSprite(spaceship.x,spaceship.y,10,10);
+    laser.addImage(laser_img);
+    laser.velocityY=-4;
+    laser.lifetime=100;
+    laserGroup.add(laser);
+    laser.scale=0.5;
 }
 
 
